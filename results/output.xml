@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.9 on win32)" generated="2024-04-05T22:07:57.429315" rpa="false" schemaversion="5">
+<suite id="s1" name="Tss-Proiect" source="C:\Users\andre\Documents\TSS\tss-proiect">
+<suite id="s1-s1" name="Tests" source="C:\Users\andre\Documents\TSS\tss-proiect\tests">
+<suite id="s1-s1-s1" name="Frontend" source="C:\Users\andre\Documents\TSS\tss-proiect\tests\frontend">
+<suite id="s1-s1-s1-s1" name="Navigation" source="C:\Users\andre\Documents\TSS\tss-proiect\tests\frontend\navigation.robot">
+<test id="s1-s1-s1-s1-t1" name="Testare Login Cu Date Invalide" line="57">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-04-05T22:07:57.574094" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:44488/#/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-04-05T22:07:57.574094" elapsed="1.507625"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.082716" elapsed="0.125717"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.208433" elapsed="0.012061"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-04-05T22:07:59.221492" level="INFO">Clicking element 'xpath=//h2[contains(text(), 'Ai cont ?')]'.</msg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.221492" elapsed="0.057045"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conecteaza-te</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.279538" elapsed="0.012031"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T22:07:59.292565" level="INFO">Typing text 'emailInvalid' into text field 'id=usernameId'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>emailInvalid</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.292565" elapsed="0.108350"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-04-05T22:07:59.401911" level="INFO">Typing text 'parolaInvalida' into text field 'id=passwordId'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>parolaInvalida</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.401911" elapsed="0.085789"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-04-05T22:07:59.488720" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Conecteaza-te')]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.488720" elapsed="0.049167"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conectarea a esuat!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.538884" elapsed="0.218693"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-04-05T22:07:59.757577" elapsed="2.086048"/>
+</kw>
+<status status="PASS" start="2024-04-05T22:07:57.573097" elapsed="4.270528"/>
+</test>
+<doc>Verifică navigarea în cadrul aplicației pentru secțiunile principale.</doc>
+<status status="PASS" start="2024-04-05T22:07:57.448862" elapsed="4.396784"/>
+</suite>
+<status status="PASS" start="2024-04-05T22:07:57.446856" elapsed="4.399994"/>
+</suite>
+<status status="PASS" start="2024-04-05T22:07:57.445867" elapsed="4.401985"/>
+</suite>
+<status status="PASS" start="2024-04-05T22:07:57.431308" elapsed="4.417535"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Tss-Proiect">Tss-Proiect</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Tests">Tss-Proiect.Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Frontend">Tss-Proiect.Tests.Frontend</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Navigation">Tss-Proiect.Tests.Frontend.Navigation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
