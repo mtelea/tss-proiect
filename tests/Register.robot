@@ -2,24 +2,28 @@
 Library    RequestsLibrary
 Library    JSONLibrary
 Library    Collections
+Library    String
 
 *** Variables ***
 ${BASE_URL}    https://localhost:7211
 ${REGISTER_USER_ENDPOINT}    /register/register-user
-${VALID_EMAIL}    use1r52@example.com
-${VALID_USERNAME}    someusername5
-${VALID_PASSWORD}    somepassword5
+${VALID_EMAIL}    username@example.com
+${VALID_USERNAME}=    username
+${VALID_PASSWORD}    password
 
 *** Test Cases ***
 Register User with Valid Data
     [Documentation]    Test registering a user with valid data
     [Tags]    register    valid
-    ${request_body}    Create Dictionary    email=${VALID_EMAIL}    userName=${VALID_USERNAME}    password=${VALID_PASSWORD}    confirmPassword=${VALID_PASSWORD} 
+    ${random_prefix}=    Generate Random String    7
+    ${final_email}=    Catenate    SEPARATOR=    ${random_prefix}    ${VALID_EMAIL}
+    ${final_username}=    Catenate    SEPARATOR=    ${random_prefix}    ${VALID_USERNAME}
+    ${request_body}    Create Dictionary    email=${final_email}    userName=${final_username}    password=${VALID_PASSWORD}    confirmPassword=${VALID_PASSWORD} 
     ${headers}=    Create Dictionary    Content-Type    application/json
     ${response}=    POST    url=${BASE_URL}${REGISTER_USER_ENDPOINT}    json=${request_body}    headers=${headers}    verify=${False}
     ${response_body}=    Convert To String    ${response.content}
     Log    ${response_body}
-    Status Should Be    200    ${response}
+    Dictionary Should Contain Value    ${response.json()}    Registration successful
 
 Does not Register User with duplicate username
     [Documentation]    Test registering a user with dublicate data
