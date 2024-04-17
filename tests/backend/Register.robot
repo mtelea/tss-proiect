@@ -34,4 +34,3 @@ Does not Register User with duplicate username
     ${response_body}=    Convert Json To String    ${response}
     Log    ${response}
     Should Be Equal    FAIL    ${response[0]}
-

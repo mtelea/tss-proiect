@@ -6,6 +6,7 @@ Library           SeleniumLibrary
 ${URL}            https://localhost:44488/#/
 ${HOME_TITLE}     xpath=//h1[contains(text(), 'GreenScape: Plantează și iubește')]
 ${HOME_LOGIN}     xpath=//h2[contains(text(), 'Ai cont ?')]
+${LOGIN_BUTTON_PATH}    xpath=/html/body/app-root/body/div/app-home/div/div[2]/div[2]/h2
 
 ${LEGUME}     xpath=//div[@id='legume']
 ${FRUCTE}         xpath=//div[@id='fructe']
@@ -46,6 +47,7 @@ Testare Login Successful
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
+    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
     Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    ${USERNAME}
@@ -59,6 +61,7 @@ Testare Login Cu Date Invalide
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
+    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
     Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    emailInvalid
