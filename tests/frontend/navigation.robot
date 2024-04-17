@@ -5,8 +5,6 @@ Library           SeleniumLibrary
 *** Variables ***
 ${URL}            https://localhost:44488/#/
 ${HOME_TITLE}     xpath=//h1[contains(text(), 'GreenScape: Plantează și iubește')]
-${HOME_LOGIN}     xpath=//h2[contains(text(), 'Ai cont ?')]
-${LOGIN_BUTTON_PATH}    xpath=/html/body/app-root/body/div/app-home/div/div[2]/div[2]/h2
 
 ${LEGUME}     xpath=//div[@id='legume']
 ${FRUCTE}         xpath=//div[@id='fructe']
@@ -14,7 +12,7 @@ ${FLORI}        xpath=//div[@id='flori']
 ${BROWSER}        Chrome
 
 *** Test Cases ***
-Testare Navigare
+Testare Navigare Plante
     Open Browser    ${URL}    ${BROWSER}
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
