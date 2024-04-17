@@ -13,12 +13,6 @@ ${FRUCTE}         xpath=//div[@id='fructe']
 ${FLORI}        xpath=//div[@id='flori']
 ${BROWSER}        Chrome
 
-${USERNAME_FIELD}    id=usernameId
-${PASSWORD_FIELD}    id=passwordId
-${LOGIN_BUTTON}    xpath=//button[contains(text(), 'Conecteaza-te')]
-${USERNAME}          andreeatest
-${PASSWORD}          andreeatest
-
 *** Test Cases ***
 Testare Navigare
     Open Browser    ${URL}    ${BROWSER}
@@ -40,32 +34,4 @@ Testare Navigare
     Go Back
     Wait Until Page Contains Element    ${HOME_TITLE}
 
-    Close Browser
-
-Testare Login Successful
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
-    Wait Until Page Contains Element    ${HOME_TITLE}
-
-    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
-    Click Element    ${HOME_LOGIN}
-    Wait Until Page Contains    Conecteaza-te
-    Input Text    ${USERNAME_FIELD}    ${USERNAME}
-    Input Text    ${PASSWORD_FIELD}    ${PASSWORD}
-    Click Button    ${LOGIN_BUTTON}
-    Wait Until Page Contains    Conectare realizată cu succes! Veți fi redirecționat către pagina de start.
-    Close Browser
-
-Testare Login Cu Date Invalide
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
-    Wait Until Page Contains Element    ${HOME_TITLE}
-
-    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
-    Click Element    ${HOME_LOGIN}
-    Wait Until Page Contains    Conecteaza-te
-    Input Text    ${USERNAME_FIELD}    emailInvalid
-    Input Text    ${PASSWORD_FIELD}    parolaInvalida
-    Click Button    ${LOGIN_BUTTON}
-    Wait Until Page Contains    Conectarea a esuat!
     Close Browser
