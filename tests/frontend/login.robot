@@ -6,6 +6,7 @@ Library           SeleniumLibrary
 ${URL}            https://localhost:44488/#/
 ${HOME_TITLE}     xpath=//h1[contains(text(), 'GreenScape: Plantează și iubește')]
 ${HOME_LOGIN}     xpath=//h2[contains(text(), 'Ai cont ?')]
+${LOGIN_BUTTON_PATH}    css:.log-home-text
 ${BROWSER}        Chrome
 
 ${USERNAME_FIELD}    id=usernameId
@@ -20,6 +21,7 @@ Testare Login Successful
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
+    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
     Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    ${USERNAME}
@@ -33,6 +35,7 @@ Testare Login Cu Date Invalide
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
+    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
     Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    emailInvalid
@@ -46,6 +49,7 @@ Testare mesaje de validare a campului de username
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
+    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
     Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    a
@@ -57,6 +61,7 @@ Testare mesaje de validare a campului de password
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
+    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
     Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
 
