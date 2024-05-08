@@ -21,8 +21,8 @@ Testare Login Successful
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
-    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
-    Click Element    ${HOME_LOGIN}
+    Wait Until Keyword Succeeds    5x    5s    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
+    Wait Until Keyword Succeeds    5x    5s    Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    ${USERNAME}
     Input Text    ${PASSWORD_FIELD}    ${PASSWORD}
@@ -35,8 +35,8 @@ Testare Login Cu Date Invalide
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
-    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
-    Click Element    ${HOME_LOGIN}
+    Wait Until Keyword Succeeds    5x    5s    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
+    Wait Until Keyword Succeeds    5x    5s    Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    emailInvalid
     Input Text    ${PASSWORD_FIELD}    parolaInvalida
@@ -49,8 +49,8 @@ Testare mesaje de validare a campului de username
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
-    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
-    Click Element    ${HOME_LOGIN}
+    Wait Until Keyword Succeeds    5x    5s    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
+    Wait Until Keyword Succeeds    5x    5s    Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    a
     Wait Until Page Contains    Your username must have at least 3 characters.
@@ -61,8 +61,8 @@ Testare mesaje de validare a campului de password
     Maximize Browser Window
     Wait Until Page Contains Element    ${HOME_TITLE}
 
-    Run Keyword And Ignore Error    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
-    Click Element    ${HOME_LOGIN}
+    Wait Until Keyword Succeeds    5x    5s    Scroll Element Into View    ${LOGIN_BUTTON_PATH}
+    Wait Until Keyword Succeeds    5x    5s    Click Element    ${HOME_LOGIN}
     Wait Until Page Contains    Conecteaza-te
 
     Click Element    ${PASSWORD_FIELD}
