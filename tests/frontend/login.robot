@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation     Verifică functinalitatea de login.
+Documentation     Verifică funcționalitatea de login.
 Library           SeleniumLibrary
 
 *** Variables ***
@@ -28,6 +28,7 @@ Testare Login Successful
     Input Text    ${PASSWORD_FIELD}    ${PASSWORD}
     Click Button    ${LOGIN_BUTTON}
     Wait Until Page Contains    Conectare realizată cu succes! Veți fi redirecționat către pagina de start.
+    Page Should Contain    Conectare realizată cu succes! Veți fi redirecționat către pagina de start.
     Close Browser
 
 Testare Login Cu Date Invalide
@@ -42,6 +43,7 @@ Testare Login Cu Date Invalide
     Input Text    ${PASSWORD_FIELD}    parolaInvalida
     Click Button    ${LOGIN_BUTTON}
     Wait Until Page Contains    Conectarea a esuat!
+    Page Should Contain    Conectarea a esuat!
     Close Browser
 
 Testare mesaje de validare a campului de username
@@ -54,6 +56,7 @@ Testare mesaje de validare a campului de username
     Wait Until Page Contains    Conecteaza-te
     Input Text    ${USERNAME_FIELD}    a
     Wait Until Page Contains    Your username must have at least 3 characters.
+    Page Should Contain    Your username must have at least 3 characters.
     Close Browser
 
 Testare mesaje de validare a campului de password
@@ -68,5 +71,6 @@ Testare mesaje de validare a campului de password
     Click Element    ${PASSWORD_FIELD}
     Click Element    ${USERNAME_FIELD}
     Wait Until Page Contains    Please enter your password.
+    Page Should Contain    Please enter your password.
 
     Close Browser
