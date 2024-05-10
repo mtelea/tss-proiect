@@ -1,6 +1,8 @@
 ## Testare automată folosind un robot - Robot Framework
 
-<img src="/Robot-framework-logo.png" align="center" width="100"/>
+<p align="center">
+<img src="/robot-framework.png" width="100"/>
+</p>
 
 Proiect pentru materia *Testarea sistemelor software* în care am implementat diverse scenarii de testare automată folosind Robot Framework.
 
