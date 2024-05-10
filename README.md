@@ -9,6 +9,6 @@ Proiect pentru materia *Testarea sistemelor software* în care am implementat di
 Echipa noastră:
 - Telea Maria
 - Draghioti Andreea
-- Borcan
+- Borcan Cristian
 
 [Link pentru prezentare](https://docs.google.com/presentation/d/1K21oRCAtrjXaDZAdQ__jpQ7afUIlCCl4CynDpbhSFfc/edit?usp=sharing) în care am inclus explicații, demo-uri, comparații și diverse diagrame.
