@@ -1,0 +1,1238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.2 on win32)" generated="2024-05-08T21:33:28.975662" rpa="false" schemaversion="5">
+<suite id="s1" name="Tss-Proiect" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect">
+<suite id="s1-s1" name="Tests" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests">
+<suite id="s1-s1-s1" name="Backend" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\backend">
+<suite id="s1-s1-s1-s1" name="AccountRobot" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\backend\AccountRobot.robot">
+<test id="s1-s1-s1-s1-t1" name="Test Forgot Password Succesful" line="14">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:29.095455" level="INFO">${request_body} = {'Email': 'telea.maria3@gmail.com'}</msg>
+<var>${request_body}</var>
+<arg>Email=${VALID_EMAIL}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:29.094459" elapsed="0.000996"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:29.095455" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:29.095455" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-05-08T21:33:30.011610" level="INFO">POST Request : url=https://localhost:44488/account/forgot-password 
+ path_url=/account/forgot-password 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '35'} 
+ body=b'{"Email": "telea.maria3@gmail.com"}' 
+ </msg>
+<msg time="2024-05-08T21:33:30.012610" level="INFO">POST Response : url=https://localhost:44488/account/forgot-password 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'content-type': 'application/json; charset=utf-8', 'date': 'Wed, 08 May 2024 18:33:29 GMT', 'server': 'Kestrel', 'transfer-encoding': 'chunked', 'connection': 'keep-alive'} 
+ body={"message":"Password reset email sent successfully"} 
+ </msg>
+<msg time="2024-05-08T21:33:30.012610" level="INFO">C:\Users\Chris\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-08T21:33:30.012610" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${BASE_URL}/forgot-password</arg>
+<arg>json=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-05-08T21:33:29.095455" elapsed="0.917155"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.013610" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.013610" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()["message"]}</arg>
+<arg>Password reset email sent successfully</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.013610" elapsed="0.000999"/>
+</kw>
+<doc>Test ForgotPassword method</doc>
+<status status="PASS" start="2024-05-08T21:33:29.094459" elapsed="0.920150"/>
+</test>
+<test id="s1-s1-s1-s1-t2" name="Test Forgot Password With Invalid Email" line="22">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.015609" level="INFO">${request_body} = {'Email': 'invalid_user@example.com'}</msg>
+<var>${request_body}</var>
+<arg>Email=${INVALID_EMAIL}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.015609" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.015609" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.015609" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Warn On Failure" owner="BuiltIn">
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-05-08T21:33:30.120135" level="INFO">POST Request : url=https://localhost:44488/account/forgot-password 
+ path_url=/account/forgot-password 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '32'} 
+ body=Email=invalid_user%40example.com 
+ </msg>
+<msg time="2024-05-08T21:33:30.120135" level="INFO">POST Response : url=https://localhost:44488/account/forgot-password 
+ status=400, reason=Bad Request 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'content-type': 'application/problem+json; charset=utf-8', 'date': 'Wed, 08 May 2024 18:33:29 GMT', 'server': 'Kestrel', 'transfer-encoding': 'chunked', 'connection': 'keep-alive'} 
+ body={"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"errors":{"$":["'E' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0."],"model":["The model field is required."]},"traceId":"00-c2f1b3ddb819c0e5382bbe6ba431d096-b37c4c2537a9efed-00"} 
+ </msg>
+<msg time="2024-05-08T21:33:30.121133" level="INFO">C:\Users\Chris\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-08T21:33:30.121133" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password</msg>
+<arg>${BASE_URL}/forgot-password</arg>
+<arg>data=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2024-05-08T21:33:30.016608" elapsed="0.106525">HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password</status>
+</kw>
+<msg time="2024-05-08T21:33:30.123133" level="WARN">Executing keyword 'POST' failed:
+HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password</msg>
+<msg time="2024-05-08T21:33:30.123133" level="INFO">${response} = ('FAIL', 'HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password')</msg>
+<var>${response}</var>
+<arg>POST</arg>
+<arg>${BASE_URL}/forgot-password</arg>
+<arg>data=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Runs the specified keyword logs a warning if the keyword fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.015609" elapsed="0.107524"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response[0]}</arg>
+<arg>FAIL</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.123133" elapsed="0.001001"/>
+</kw>
+<doc>Test ForgotPassword method with invalid email</doc>
+<status status="PASS" start="2024-05-08T21:33:30.014609" elapsed="0.109525"/>
+</test>
+<test id="s1-s1-s1-s1-t3" name="Test Reset Password Succesful" line="29">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.125137" level="INFO">${request_body} = {'Email': 'telea.maria3@gmail.com'}</msg>
+<var>${request_body}</var>
+<arg>Email=${VALID_EMAIL}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.125137" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.125137" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.125137" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-05-08T21:33:30.422103" level="INFO">POST Request : url=https://localhost:44488/account/forgot-password 
+ path_url=/account/forgot-password 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '35'} 
+ body=b'{"Email": "telea.maria3@gmail.com"}' 
+ </msg>
+<msg time="2024-05-08T21:33:30.422103" level="INFO">POST Response : url=https://localhost:44488/account/forgot-password 
+ status=200, reason=OK 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'content-type': 'application/json; charset=utf-8', 'date': 'Wed, 08 May 2024 18:33:29 GMT', 'server': 'Kestrel', 'transfer-encoding': 'chunked', 'connection': 'keep-alive'} 
+ body={"message":"Password reset email sent successfully"} 
+ </msg>
+<msg time="2024-05-08T21:33:30.423101" level="INFO">C:\Users\Chris\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-08T21:33:30.423101" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${BASE_URL}/forgot-password</arg>
+<arg>json=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.126136" elapsed="0.296965"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.424100" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.424100" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response.json()["message"]}</arg>
+<arg>Password reset email sent successfully</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.424100" elapsed="0.001000"/>
+</kw>
+<doc>Test ForgotPassword method</doc>
+<status status="PASS" start="2024-05-08T21:33:30.125137" elapsed="0.299963"/>
+</test>
+<test id="s1-s1-s1-s1-t4" name="Test Reset Password Unsuccesful" line="37">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.426101" level="INFO">${request_body} = {'Email': 'invalid_user@example.com'}</msg>
+<var>${request_body}</var>
+<arg>Email=${INVALID_EMAIL}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.426101" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.426101" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.426101" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Warn On Failure" owner="BuiltIn">
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-05-08T21:33:30.538883" level="INFO">POST Request : url=https://localhost:44488/account/forgot-password 
+ path_url=/account/forgot-password 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '32'} 
+ body=Email=invalid_user%40example.com 
+ </msg>
+<msg time="2024-05-08T21:33:30.538883" level="INFO">POST Response : url=https://localhost:44488/account/forgot-password 
+ status=400, reason=Bad Request 
+ headers={'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'content-type': 'application/problem+json; charset=utf-8', 'date': 'Wed, 08 May 2024 18:33:29 GMT', 'server': 'Kestrel', 'transfer-encoding': 'chunked', 'connection': 'keep-alive'} 
+ body={"type":"https://tools.ietf.org/html/rfc9110#section-15.5.1","title":"One or more validation errors occurred.","status":400,"errors":{"$":["'E' is an invalid start of a value. Path: $ | LineNumber: 0 | BytePositionInLine: 0."],"model":["The model field is required."]},"traceId":"00-aa96e4ace6398b304372e55da9bf5362-25d77accd715ab56-00"} 
+ </msg>
+<msg time="2024-05-08T21:33:30.538883" level="INFO">C:\Users\Chris\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-08T21:33:30.538883" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password</msg>
+<arg>${BASE_URL}/forgot-password</arg>
+<arg>data=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2024-05-08T21:33:30.426101" elapsed="0.112782">HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password</status>
+</kw>
+<msg time="2024-05-08T21:33:30.538883" level="WARN">Executing keyword 'POST' failed:
+HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password</msg>
+<msg time="2024-05-08T21:33:30.540141" level="INFO">${response} = ('FAIL', 'HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password')</msg>
+<var>${response}</var>
+<arg>POST</arg>
+<arg>${BASE_URL}/forgot-password</arg>
+<arg>data=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Runs the specified keyword logs a warning if the keyword fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.426101" elapsed="0.114040"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response[0]}</arg>
+<arg>FAIL</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.540141" elapsed="0.001006"/>
+</kw>
+<doc>Test ForgotPassword method</doc>
+<status status="PASS" start="2024-05-08T21:33:30.425100" elapsed="0.116047"/>
+</test>
+<status status="PASS" start="2024-05-08T21:33:28.998664" elapsed="1.542483"/>
+</suite>
+<suite id="s1-s1-s1-s2" name="Login" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\backend\Login.robot">
+<test id="s1-s1-s1-s2-t1" name="Test Successful Login" line="12">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.550207" level="INFO">${REQUEST_BODY} = { "UserName": "maria", "Password": "admin1234"}</msg>
+<var>${REQUEST_BODY}</var>
+<arg>{ "UserName": "maria", "Password": "admin1234"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.550207" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.550207" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.550207" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-05-08T21:33:30.707244" level="INFO">POST Request : url=https://localhost:7211/api/Login/login 
+ path_url=/api/Login/login 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '47'} 
+ body={ "UserName": "maria", "Password": "admin1234"} 
+ </msg>
+<msg time="2024-05-08T21:33:30.707244" level="INFO">POST Response : url=https://localhost:7211/api/Login/login 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 08 May 2024 18:33:29 GMT', 'Server': 'Kestrel', 'Cache-Control': 'no-cache,no-store', 'Expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'Pragma': 'no-cache', 'Set-Cookie': '.AspNetCore.Identity.Application=CfDJ8OJdHCsQCupCiOkcG0GIWK7_5WJhftFblahHgjCLlemmX2o8zTUG7r6UfdbPNfJD6bQaNQsyaqsMOlKvJqSO84p6fuLOEKEvGHqOnykBeMlhnykljwWAX1K0S9U-DDz1q4-U01rXACjlR7hx65XOPiEU_Cdf4NaakAuKTjm4RLblnTT6luaW9VbhvKD0DQCeFjpEIGA0teFl8P04KO9LLnwhKFtl7vWSgwAgxj_YuM8gMPpaA0xWD0n16JObq-V5cD5wX5ZoGEVh4YRSaOpCr4P4wmFU3MFCT1yL__WMmf1lxmFX89D1c5oFpU9SCCPDKoXNG4MbrvEeULlVCXUPs36hx-dL1NqhDYu0YO_5vRHw0KAsVRyT01l2ySgt6tt87BHB2EejFUlv0MmEWVMVufkpmbbMNi4tI2TCYp28zZZifIAhn-p5_FSfjDpUJdu0WfSh2PtcvhpRIdKLrm1JTPMO05HmGluu5pYnkfwnHvWclLW7rXGZFM8ZXN5--_fLefDlXMTk10jOXneYjWVfjW9mpn3N6MJF4-vVoNbgvui_HtShv36aLb1bajxBtgAFyv1OpX4pn8Os5x4r8Pu166e5BXliBLJhfURJUCiVFRc9Ft3ghzzrqV2_eyDuKMzcSagh6o9RDYKGVWrMKg8-OlB3JuoiYclG0RXGhmAfc9nDvSy16P_W-4UbM1OYh9u3mTRd5t2cOHDm_Oo0raY_-mpDBI8MaC-ckWPdx-HmC9qJZkXirp4iC2UG8BoQNPXNq0YatkvAS1eEfzRJ_vUFZuXM2EvAMGofv1vsUwIu_eUy0FCRgvlFNQK2-FHxgsqnUA; path=/; secure; samesite=lax; httponly', 'Transfer-Encoding': 'chunked'} 
+ body={"message":"Login successful"} 
+ </msg>
+<msg time="2024-05-08T21:33:30.708244" level="INFO">C:\Users\Chris\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-08T21:33:30.708244" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>${BASE_URL}${LOGIN_ENDPOINT}</arg>
+<arg>data=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.550207" elapsed="0.158037"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.709245" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${response.status_code}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.709245" elapsed="0.000000"/>
+</kw>
+<doc>Test for successful login</doc>
+<status status="PASS" start="2024-05-08T21:33:30.549204" elapsed="0.160714"/>
+</test>
+<test id="s1-s1-s1-s2-t2" name="Test Failed Login" line="20">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.710932" level="INFO">${REQUEST_BODY} = { "UserName": "maria", "Password": "admin12377774"}</msg>
+<var>${REQUEST_BODY}</var>
+<arg>{ "UserName": "maria", "Password": "admin12377774"}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.710932" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:30.710932" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.710932" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Warn On Failure" owner="BuiltIn">
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-05-08T21:33:30.900557" level="INFO">POST Request : url=https://localhost:7211/api/Login/login 
+ path_url=/api/Login/login 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '51'} 
+ body={ "UserName": "maria", "Password": "admin12377774"} 
+ </msg>
+<msg time="2024-05-08T21:33:30.900557" level="INFO">POST Response : url=https://localhost:7211/api/Login/login 
+ status=400, reason=Bad Request 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 08 May 2024 18:33:29 GMT', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body={"message":"Login failed","errors":"Invalid login attempt"} 
+ </msg>
+<msg time="2024-05-08T21:33:30.900557" level="INFO">C:\Users\Chris\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-08T21:33:30.901077" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/api/Login/login</msg>
+<arg>${BASE_URL}${LOGIN_ENDPOINT}</arg>
+<arg>data=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2024-05-08T21:33:30.710932" elapsed="0.190662">HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/api/Login/login</status>
+</kw>
+<msg time="2024-05-08T21:33:30.901594" level="WARN">Executing keyword 'POST' failed:
+HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/api/Login/login</msg>
+<msg time="2024-05-08T21:33:30.902114" level="INFO">${response} = ('FAIL', 'HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/api/Login/login')</msg>
+<var>${response}</var>
+<arg>POST</arg>
+<arg>${BASE_URL}${LOGIN_ENDPOINT}</arg>
+<arg>data=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Runs the specified keyword logs a warning if the keyword fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.710932" elapsed="0.191182"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${response[0]}</arg>
+<arg>FAIL</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-05-08T21:33:30.902749" elapsed="0.000510"/>
+</kw>
+<doc>Test for failed login</doc>
+<status status="PASS" start="2024-05-08T21:33:30.709918" elapsed="0.193341"/>
+</test>
+<status status="PASS" start="2024-05-08T21:33:30.542199" elapsed="0.362121"/>
+</suite>
+<suite id="s1-s1-s1-s3" name="Register" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\backend\Register.robot">
+<test id="s1-s1-s1-s3-t1" name="Register User with Valid Data" line="15">
+<kw name="Generate Random String" owner="String">
+<msg time="2024-05-08T21:33:31.003531" level="INFO">${random_prefix} = iBr0jR4</msg>
+<var>${random_prefix}</var>
+<arg>7</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.002535" elapsed="0.000996"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.003531" level="INFO">${final_email} = iBr0jR4username@example.com</msg>
+<var>${final_email}</var>
+<arg>SEPARATOR=</arg>
+<arg>${random_prefix}</arg>
+<arg>${VALID_EMAIL}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.003531" elapsed="0.000000"/>
+</kw>
+<kw name="Catenate" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.003531" level="INFO">${final_username} = iBr0jR4username</msg>
+<var>${final_username}</var>
+<arg>SEPARATOR=</arg>
+<arg>${random_prefix}</arg>
+<arg>${VALID_USERNAME}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.003531" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.004532" level="INFO">${request_body} = {'email': 'iBr0jR4username@example.com', 'userName': 'iBr0jR4username', 'password': 'password', 'confirmPassword': 'password'}</msg>
+<var>${request_body}</var>
+<arg>email=${final_email}</arg>
+<arg>userName=${final_username}</arg>
+<arg>password=${VALID_PASSWORD}</arg>
+<arg>confirmPassword=${VALID_PASSWORD}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.004532" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.004532" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.004532" elapsed="0.000000"/>
+</kw>
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-05-08T21:33:31.182111" level="INFO">POST Request : url=https://localhost:7211/register/register-user 
+ path_url=/register/register-user 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '126'} 
+ body=b'{"email": "iBr0jR4username@example.com", "userName": "iBr0jR4username", "password": "password", "confirmPassword": "password"}' 
+ </msg>
+<msg time="2024-05-08T21:33:31.182111" level="INFO">POST Response : url=https://localhost:7211/register/register-user 
+ status=200, reason=OK 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 08 May 2024 18:33:30 GMT', 'Server': 'Kestrel', 'Cache-Control': 'no-cache,no-store', 'Expires': 'Thu, 01 Jan 1970 00:00:00 GMT', 'Pragma': 'no-cache', 'Set-Cookie': '.AspNetCore.Identity.Application=CfDJ8OJdHCsQCupCiOkcG0GIWK5gaZR8V6Y77Qk4V8p0puXPOqnmV2kcBoaFzeEr_j62PTnWcihn22P94k8Yd03ai_pYeonDmfZtOjqnTbWN47972YolQbA8-n3oZNbOSLW2-ltpDTn4M9iKRgdmVo5gVwdRTdnjFoBmpkTV452d00FOWCh8pEhbYc016d8xV6xz_-4xZOH4ChhgS9MSx0XfKRcDmb7r6cIj-sazOSWwEFAwShO4E880jAL6s-DOOXDx2hevbtrf4Ac5WpjZQggTLxwvnmQmGI04_jCxO8EwoTPtysjp6dtD-vp7fthe0qPwLlRrdZoWp6ZyH1AEdqchGJapfQoYbYEiTUgEYdtyRS3cF9m4WQqPef9T15U2eZshV5jl6eGlM3yZTsHEk_6KlQVwpHyR1GN57SfophyTvTDE7spU-roGzb6PdBp-qRMw9ldqjQLfdY2cFs3Zs4By-QYj-msHFOZXCHY3kiWbLnlteuJTshPIv_5U3aZglrEurkz9NDJQwsZKPbdfhbSR8ExMX9MlIW8qkiCINzDgCumwfWNUrYTFGG3OlyxVhXUJT7DpdAVa1lxtgXZ7xRUt5S5tBEYlC_bwTwxAwDkxEechxdgOk077K2ovMRCzcHhwa-bSyhjOJLjs82LyF7qxlE0Oe_iS_ZgoHPNPSnq45qZJDfHzetf3ZY0sLJGxy3yFZRwViE2FPpvzNESzDAkzKgLuAIp-koLhGbbFLVe8nEowZeM4uwaoDU2EVWQs_3VgQM6sESpeOQ5SUJVumunfyE3lviU0sn7b69rjRsDYOQ8kxCzosh7oGkEHPhYKUhWztZG7k1Q-eDin_8nnvbcXC-Q; expires=Wed, 22 May 2024 18:33:31 GMT; path=/; secure; samesite=lax; httponly', 'Transfer-Encoding': 'chunked'} 
+ body={"message":"Registration successful","userId":"d34462ee-7190-4f94-b1fc-6ae84413393f"} 
+ </msg>
+<msg time="2024-05-08T21:33:31.183110" level="INFO">C:\Users\Chris\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-08T21:33:31.184114" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>url=${BASE_URL}${REGISTER_USER_ENDPOINT}</arg>
+<arg>json=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Sends a POST request.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.005531" elapsed="0.178583"/>
+</kw>
+<kw name="Convert To String" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.185112" level="INFO">${response_body} = {"message":"Registration successful","userId":"d34462ee-7190-4f94-b1fc-6ae84413393f"}</msg>
+<var>${response_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.184114" elapsed="0.000998"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.185112" level="INFO">{"message":"Registration successful","userId":"d34462ee-7190-4f94-b1fc-6ae84413393f"}</msg>
+<arg>${response_body}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.185112" elapsed="0.000000"/>
+</kw>
+<kw name="Dictionary Should Contain Value" owner="Collections">
+<msg time="2024-05-08T21:33:31.186111" level="INFO">False</msg>
+<arg>${response.json()}</arg>
+<arg>Registration successful</arg>
+<doc>Fails if ``value`` is not found from ``dictionary``.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.185112" elapsed="0.000999"/>
+</kw>
+<doc>Test registering a user with valid data</doc>
+<tag>register</tag>
+<tag>valid</tag>
+<status status="PASS" start="2024-05-08T21:33:31.002535" elapsed="0.183576"/>
+</test>
+<test id="s1-s1-s1-s3-t2" name="Does not Register User with duplicate username" line="28">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.187111" level="INFO">${request_body} = {'email': 'username@example.com', 'userName': 'username', 'password': 'password', 'confirmPassword': 'password'}</msg>
+<var>${request_body}</var>
+<arg>email=${VALID_EMAIL}</arg>
+<arg>userName=${VALID_USERNAME}</arg>
+<arg>password=${VALID_PASSWORD}</arg>
+<arg>confirmPassword=${VALID_PASSWORD}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.187111" elapsed="0.000000"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.187111" level="INFO">${headers} = {'Content-Type': 'application/json'}</msg>
+<var>${headers}</var>
+<arg>Content-Type</arg>
+<arg>application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.187111" elapsed="0.000000"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="POST" owner="RequestsLibrary">
+<msg time="2024-05-08T21:33:31.358643" level="INFO">POST Request : url=https://localhost:7211/register/register-user 
+ path_url=/register/register-user 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '112'} 
+ body=b'{"email": "username@example.com", "userName": "username", "password": "password", "confirmPassword": "password"}' 
+ </msg>
+<msg time="2024-05-08T21:33:31.359644" level="INFO">POST Response : url=https://localhost:7211/register/register-user 
+ status=400, reason=Bad Request 
+ headers={'Content-Type': 'application/json; charset=utf-8', 'Date': 'Wed, 08 May 2024 18:33:30 GMT', 'Server': 'Kestrel', 'Transfer-Encoding': 'chunked'} 
+ body={"message":"Registration failed","errors":[{"code":"DuplicateUserName","description":"Username 'username' is already taken."},{"code":"DuplicateEmail","description":"Email 'username@example.com' is already taken."}]} 
+ </msg>
+<msg time="2024-05-08T21:33:31.359644" level="INFO">C:\Users\Chris\AppData\Local\Programs\Python\Python312\Lib\site-packages\urllib3\connectionpool.py:1061: InsecureRequestWarning: Unverified HTTPS request is being made to host 'localhost'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg time="2024-05-08T21:33:31.359644" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/register/register-user</msg>
+<arg>url=${BASE_URL}${REGISTER_USER_ENDPOINT}</arg>
+<arg>json=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Sends a POST request.</doc>
+<status status="FAIL" start="2024-05-08T21:33:31.187111" elapsed="0.173532">HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/register/register-user</status>
+</kw>
+<msg time="2024-05-08T21:33:31.360643" level="INFO">${response} = ('FAIL', 'HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/register/register-user')</msg>
+<var>${response}</var>
+<arg>POST</arg>
+<arg>url=${BASE_URL}${REGISTER_USER_ENDPOINT}</arg>
+<arg>json=${request_body}</arg>
+<arg>headers=${headers}</arg>
+<arg>verify=${False}</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.187111" elapsed="0.173532"/>
+</kw>
+<kw name="Convert Json To String" owner="JSONLibrary">
+<msg time="2024-05-08T21:33:31.361644" level="INFO">${response_body} = ["FAIL", "HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/register/register-user"]</msg>
+<var>${response_body}</var>
+<arg>${response}</arg>
+<doc>Convert JSON object to string</doc>
+<status status="PASS" start="2024-05-08T21:33:31.360643" elapsed="0.001001"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-05-08T21:33:31.361644" level="INFO">('FAIL', 'HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/register/register-user')</msg>
+<arg>${response}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.361644" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>FAIL</arg>
+<arg>${response[0]}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.361644" elapsed="0.001000"/>
+</kw>
+<doc>Test registering a user with dublicate data</doc>
+<tag>invalid</tag>
+<tag>register</tag>
+<status status="PASS" start="2024-05-08T21:33:31.186111" elapsed="0.176533"/>
+</test>
+<status status="PASS" start="2024-05-08T21:33:30.904854" elapsed="0.458789"/>
+</suite>
+<status status="PASS" start="2024-05-08T21:33:28.996663" elapsed="2.367980"/>
+</suite>
+<suite id="s1-s1-s2" name="Frontend" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\frontend">
+<suite id="s1-s1-s2-s1" name="Admin" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\frontend\admin.robot">
+<test id="s1-s1-s2-s1-t1" name="Testare Functii Admin" line="40">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:31.536249" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:44488/#/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-08T21:33:31.535248" elapsed="1.643810"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.180066" elapsed="0.066084"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.246150" elapsed="0.011999"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.259151" elapsed="0.383288"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Scroll Element Into View</arg>
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.259151" elapsed="0.383288"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:33.643437" level="INFO">Clicking element 'xpath=//h2[contains(text(), 'Ai cont ?')]'.</msg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.643437" elapsed="0.068518"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Click Element</arg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.643437" elapsed="0.068518"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conecteaza-te</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.712952" elapsed="0.020004"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:33.732956" level="INFO">Typing text 'cristianbb' into text field 'id=usernameId'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.732956" elapsed="0.165052"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:33.899009" level="INFO">Typing text 'parola123' into text field 'id=passwordId'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:33.898008" elapsed="0.112519"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:34.011529" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Conecteaza-te')]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:34.010527" elapsed="0.061008"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conectare realizată cu succes! Veți fi redirecționat către pagina de start.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:34.071535" elapsed="0.220268"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${ADMIN_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:34.291803" elapsed="3.054587"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:37.347389" level="INFO">Clicking element 'xpath=//a[contains(text(), 'Admin')]'.</msg>
+<arg>${ADMIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:37.347389" elapsed="0.081767"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${ADD_PLANT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:37.429680" elapsed="0.013081"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:37.443820" level="INFO">Clicking element 'xpath=/html/body/app-root/body/div/app-admin/div/button'.</msg>
+<arg>${ADD_PLANT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:37.443299" elapsed="0.044464"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Adauga planta</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:37.488285" elapsed="0.009496"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:37.498315" level="INFO">Typing text 'Pepene Verde' into text field 'nameId'.</msg>
+<arg>${NAME_FIELD}</arg>
+<arg>${PLANT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:37.498315" elapsed="0.085156"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:37.584470" level="INFO">Selecting options from selection list 'typeId' by index 0.</msg>
+<arg>${TYPE_FIELD}</arg>
+<arg>0</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-05-08T21:33:37.583471" elapsed="0.074998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:37.658469" level="INFO">Typing text 'Citrullus lanatus' into text field 'speciesId'.</msg>
+<arg>${SPECIES_FIELD}</arg>
+<arg>${PLANT_SPECIES}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:37.658469" elapsed="0.106528"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:37.765999" level="INFO">Typing text 'Este cultivat în lumea întreagă pentru fructul său voluminos și comestibil, având o coajă dură și un miez necompartimentat.' into text field 'descriptionId'.</msg>
+<arg>${DESCRIPTION_FIELD}</arg>
+<arg>${PLANT_DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:37.764997" elapsed="0.307313"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.073309" level="INFO">Clicking element 'xpath=//*[@id="savePlantDetails"]'.</msg>
+<arg>${SAVE_PLANT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.073309" elapsed="0.035035"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.109344" level="INFO">Sending C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\frontend\pepene_verde.jpg to browser.</msg>
+<arg>${PLANT_IMAGE_FIELD}</arg>
+<arg>C:\\Users\\Chris\\Desktop\\CTI - An IV - Sem 2\\TSS\\tss-proiect\\tests\\frontend/pepene_verde.jpg</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.108344" elapsed="0.038003"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Added plant successfully</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.147345" elapsed="0.012000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.159345" level="INFO">Clicking element 'xpath=//a[contains(text(), 'Admin')]'.</msg>
+<arg>${ADMIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.159345" elapsed="0.066048"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${ADD_PLANT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.226393" elapsed="0.034002"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.280530" level="INFO">Current page contains text 'Pepene Verde'.</msg>
+<arg>${PLANT_NAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.261398" elapsed="0.019132"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.281531" level="INFO">Clicking element 'xpath=//tr[.//td[text()='Pepene Verde']]//button[@id="edit"]'.</msg>
+<arg>${EDIT_PLANT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.281531" elapsed="0.058999"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Editeaza planta</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.340530" elapsed="0.015998"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.357531" level="INFO">Typing text 'Pepene Galben' into text field 'nameId'.</msg>
+<arg>${NAME_FIELD}</arg>
+<arg>${EDITED_PLANT_NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.356528" elapsed="0.249558"/>
+</kw>
+<kw name="Select From List By Index" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.606086" level="INFO">Selecting options from selection list 'typeId' by index 1.</msg>
+<arg>${TYPE_FIELD}</arg>
+<arg>1</arg>
+<doc>Selects options from selection list ``locator`` by ``indexes``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.606086" elapsed="0.109532"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.716616" level="INFO">Typing text 'Cucumis melo' into text field 'speciesId'.</msg>
+<arg>${SPECIES_FIELD}</arg>
+<arg>${EDITED_PLANT_SPECIES}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.716616" elapsed="0.116080"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:38.833695" level="INFO">Typing text 'Se cultivă pentru fructul său, care se coace vara, conține multă apă și este de gust dulce.' into text field 'descriptionId'.</msg>
+<arg>${DESCRIPTION_FIELD}</arg>
+<arg>${EDITED_PLANT_DESCRIPTION}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:38.833695" elapsed="0.171054"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:39.005749" level="INFO">Sending C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\frontend\pepene_galben.jpg to browser.</msg>
+<arg>${EDIT_IMAGE_FIELD}</arg>
+<arg>C:\\Users\\Chris\\Desktop\\CTI - An IV - Sem 2\\TSS\\tss-proiect\\tests\\frontend/pepene_galben.jpg</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.005749" elapsed="0.029999"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:39.036753" level="INFO">Clicking element 'xpath=//*[@id="savePlantDetails"]'.</msg>
+<arg>${SAVE_PLANT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.035748" elapsed="0.051243"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Saved plants details successfully</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.087990" elapsed="0.217644"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:39.305634" level="INFO">Clicking element 'xpath=//a[contains(text(), 'Admin')]'.</msg>
+<arg>${ADMIN_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.305634" elapsed="0.036002"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${ADD_PLANT_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.341636" elapsed="0.021998"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:39.428165" level="INFO">Current page contains text 'Pepene Galben'.</msg>
+<arg>${EDITED_PLANT_NAME}</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.363634" elapsed="0.064531"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:39.429166" level="INFO">Clicking element 'xpath=//tr[.//td[text()='Pepene Galben']]//button[@id="delete"]'.</msg>
+<arg>${DELETE_PLANT_BUTTON}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.429166" elapsed="0.117517"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Deleted successfully</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.546683" elapsed="0.013998"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:39.572692" level="INFO">Current page contains text 'Deleted successfully'.</msg>
+<arg>Deleted successfully</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.561680" elapsed="0.011012"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-08T21:33:39.573692" elapsed="2.327614"/>
+</kw>
+<status status="PASS" start="2024-05-08T21:33:31.535248" elapsed="10.367058"/>
+</test>
+<doc>Verifică funcțiile utilizate de către administrator</doc>
+<status status="PASS" start="2024-05-08T21:33:31.367645" elapsed="10.534661"/>
+</suite>
+<suite id="s1-s1-s2-s2" name="Login" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\frontend\login.robot">
+<test id="s1-s1-s2-s2-t1" name="Testare Login Successful" line="19">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:41.906307" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:44488/#/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-08T21:33:41.906307" elapsed="1.535557"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-08T21:33:43.442865" elapsed="0.026005"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:43.469868" elapsed="0.012514"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-05-08T21:33:43.483386" elapsed="0.327430"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Scroll Element Into View</arg>
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:43.482382" elapsed="0.328434"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:43.811816" level="INFO">Clicking element 'xpath=//h2[contains(text(), 'Ai cont ?')]'.</msg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:43.810816" elapsed="0.061009"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Click Element</arg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:43.810816" elapsed="0.061009"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conecteaza-te</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:43.872829" elapsed="0.016058"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:43.889888" level="INFO">Typing text 'andreeatest' into text field 'id=usernameId'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:43.889888" elapsed="0.120524"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:44.011413" level="INFO">Typing text 'andreeatest' into text field 'id=passwordId'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:44.010412" elapsed="0.129720"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:44.140902" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Conecteaza-te')]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:44.140638" elapsed="0.091751"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conectare realizată cu succes! Veți fi redirecționat către pagina de start.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:44.232916" elapsed="0.222069"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:44.463985" level="INFO">Current page contains text 'Conectare realizată cu succes! Veți fi redirecționat către pagina de start.'.</msg>
+<arg>Conectare realizată cu succes! Veți fi redirecționat către pagina de start.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-08T21:33:44.455987" elapsed="0.009001"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-08T21:33:44.464988" elapsed="2.121925"/>
+</kw>
+<status status="PASS" start="2024-05-08T21:33:41.906307" elapsed="4.680606"/>
+</test>
+<test id="s1-s1-s2-s2-t2" name="Testare Login Cu Date Invalide" line="34">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:46.588915" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:44488/#/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-08T21:33:46.587913" elapsed="1.634083"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.222998" elapsed="0.032998"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.256993" elapsed="0.015012"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.273005" elapsed="0.319293"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Scroll Element Into View</arg>
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.273005" elapsed="0.319293"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:48.592819" level="INFO">Clicking element 'xpath=//h2[contains(text(), 'Ai cont ?')]'.</msg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.592819" elapsed="0.062452"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Click Element</arg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.592298" elapsed="0.062973"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conecteaza-te</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.656275" elapsed="0.018006"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:48.674281" level="INFO">Typing text 'emailInvalid' into text field 'id=usernameId'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>emailInvalid</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.674281" elapsed="0.113049"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:48.787330" level="INFO">Typing text 'parolaInvalida' into text field 'id=passwordId'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<arg>parolaInvalida</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.787330" elapsed="0.093015"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:48.881342" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Conecteaza-te')]'.</msg>
+<arg>${LOGIN_BUTTON}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.880345" elapsed="0.061515"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conectarea a esuat!</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:48.941860" elapsed="0.219094"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:49.167954" level="INFO">Current page contains text 'Conectarea a esuat!'.</msg>
+<arg>Conectarea a esuat!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-08T21:33:49.160954" elapsed="0.007000"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-08T21:33:49.167954" elapsed="2.154249"/>
+</kw>
+<status status="PASS" start="2024-05-08T21:33:46.587913" elapsed="4.734290"/>
+</test>
+<test id="s1-s1-s2-s2-t3" name="Testare mesaje de validare a campului de username" line="49">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:51.324210" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:44488/#/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-08T21:33:51.323210" elapsed="1.495021"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-08T21:33:52.818231" elapsed="0.036998"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:52.855229" elapsed="0.014003"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-05-08T21:33:52.870231" elapsed="0.319360"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Scroll Element Into View</arg>
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:52.870231" elapsed="0.319360"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:53.190591" level="INFO">Clicking element 'xpath=//h2[contains(text(), 'Ai cont ?')]'.</msg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:53.190591" elapsed="0.054003"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Click Element</arg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:53.189591" elapsed="0.055003"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conecteaza-te</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:53.244594" elapsed="0.017996"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:53.263596" level="INFO">Typing text 'a' into text field 'id=usernameId'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<arg>a</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:53.263596" elapsed="0.092300"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Your username must have at least 3 characters.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:53.355896" elapsed="0.017000"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:53.380900" level="INFO">Current page contains text 'Your username must have at least 3 characters.'.</msg>
+<arg>Your username must have at least 3 characters.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-08T21:33:53.372896" elapsed="0.009007"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-08T21:33:53.381903" elapsed="2.137157"/>
+</kw>
+<status status="PASS" start="2024-05-08T21:33:51.323210" elapsed="4.196853"/>
+</test>
+<test id="s1-s1-s2-s2-t4" name="Testare mesaje de validare a campului de password" line="62">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:55.521061" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:44488/#/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-08T21:33:55.521061" elapsed="1.608464"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.130522" elapsed="0.119813"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.250858" elapsed="0.011832"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.263214" elapsed="0.289464"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Scroll Element Into View</arg>
+<arg>${LOGIN_BUTTON_PATH}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.263214" elapsed="0.289464"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:57.553675" level="INFO">Clicking element 'xpath=//h2[contains(text(), 'Ai cont ?')]'.</msg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.553675" elapsed="0.063518"/>
+</kw>
+<arg>5x</arg>
+<arg>5s</arg>
+<arg>Click Element</arg>
+<arg>${HOME_LOGIN}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.552678" elapsed="0.064515"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Conecteaza-te</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.617193" elapsed="0.016001"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:57.634198" level="INFO">Clicking element 'id=passwordId'.</msg>
+<arg>${PASSWORD_FIELD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.633194" elapsed="0.058008"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:57.691202" level="INFO">Clicking element 'id=usernameId'.</msg>
+<arg>${USERNAME_FIELD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.691202" elapsed="0.039102"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Please enter your password.</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.730304" elapsed="0.009998"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:57.746301" level="INFO">Current page contains text 'Please enter your password.'.</msg>
+<arg>Please enter your password.</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.740302" elapsed="0.005999"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-08T21:33:57.747301" elapsed="2.130809"/>
+</kw>
+<status status="PASS" start="2024-05-08T21:33:55.521061" elapsed="4.357049"/>
+</test>
+<doc>Verifică funcționalitatea de login.</doc>
+<status status="PASS" start="2024-05-08T21:33:41.903306" elapsed="17.975805"/>
+</suite>
+<suite id="s1-s1-s2-s3" name="Navigation" source="C:\Users\Chris\Desktop\CTI - An IV - Sem 2\TSS\tss-proiect\tests\frontend\navigation.robot">
+<test id="s1-s1-s2-s3-t1" name="Testare Navigare Plante" line="15">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:33:59.883111" level="INFO">Opening browser 'Chrome' to base url 'https://localhost:44488/#/'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-08T21:33:59.883111" elapsed="1.585440"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.469554" elapsed="0.036531"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.506085" elapsed="0.015997"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:34:01.522082" level="INFO">Clicking element 'xpath=//div[@id='legume']'.</msg>
+<arg>${LEGUME}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.522082" elapsed="0.074541"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Castravete</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.597623" elapsed="0.016999"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.614622" elapsed="0.017001"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.632624" elapsed="0.012002"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:34:01.645621" level="INFO">Clicking element 'xpath=//div[@id='fructe']'.</msg>
+<arg>${FRUCTE}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.645621" elapsed="0.081637"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Mure</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.727258" elapsed="0.018168"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.746148" elapsed="0.011141"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.757811" elapsed="0.008158"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-08T21:34:01.766494" level="INFO">Clicking element 'xpath=//div[@id='flori']'.</msg>
+<arg>${FLORI}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.766494" elapsed="0.048973"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Begonie</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.816069" elapsed="0.019155"/>
+</kw>
+<kw name="Go Back" owner="SeleniumLibrary">
+<doc>Simulates the user clicking the back button on their browser.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.836223" elapsed="0.017149"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${HOME_TITLE}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.853372" elapsed="0.009002"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-08T21:34:01.863373" elapsed="2.141483"/>
+</kw>
+<status status="PASS" start="2024-05-08T21:33:59.883111" elapsed="4.121745"/>
+</test>
+<doc>Verifică navigarea în cadrul aplicației pentru secțiunile principale.</doc>
+<status status="PASS" start="2024-05-08T21:33:59.880109" elapsed="4.125746"/>
+</suite>
+<status status="PASS" start="2024-05-08T21:33:31.365644" elapsed="32.641212"/>
+</suite>
+<status status="PASS" start="2024-05-08T21:33:28.994663" elapsed="35.013192"/>
+</suite>
+<status status="PASS" start="2024-05-08T21:33:28.977661" elapsed="35.030194"/>
+</suite>
+<statistics>
+<total>
+<stat pass="14" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">invalid</stat>
+<stat pass="2" fail="0" skip="0">register</stat>
+<stat pass="1" fail="0" skip="0">valid</stat>
+</tag>
+<suite>
+<stat pass="14" fail="0" skip="0" id="s1" name="Tss-Proiect">Tss-Proiect</stat>
+<stat pass="14" fail="0" skip="0" id="s1-s1" name="Tests">Tss-Proiect.Tests</stat>
+<stat pass="8" fail="0" skip="0" id="s1-s1-s1" name="Backend">Tss-Proiect.Tests.Backend</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s1-s1" name="AccountRobot">Tss-Proiect.Tests.Backend.AccountRobot</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s2" name="Login">Tss-Proiect.Tests.Backend.Login</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1-s1-s3" name="Register">Tss-Proiect.Tests.Backend.Register</stat>
+<stat pass="6" fail="0" skip="0" id="s1-s1-s2" name="Frontend">Tss-Proiect.Tests.Frontend</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s2-s1" name="Admin">Tss-Proiect.Tests.Frontend.Admin</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1-s2-s2" name="Login">Tss-Proiect.Tests.Frontend.Login</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s2-s3" name="Navigation">Tss-Proiect.Tests.Frontend.Navigation</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-05-08T21:33:30.123133" level="WARN">Executing keyword 'POST' failed:
+HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password</msg>
+<msg time="2024-05-08T21:33:30.538883" level="WARN">Executing keyword 'POST' failed:
+HTTPError: 400 Client Error: Bad Request for url: https://localhost:44488/account/forgot-password</msg>
+<msg time="2024-05-08T21:33:30.901594" level="WARN">Executing keyword 'POST' failed:
+HTTPError: 400 Client Error: Bad Request for url: https://localhost:7211/api/Login/login</msg>
+</errors>
+</robot>
