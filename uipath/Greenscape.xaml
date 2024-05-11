@@ -1,0 +1,645 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Admin_Test" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="981.8181818181819,6928.581818181819" sap2010:WorkflowViewState.IdRef="TestThings_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Platform.SyncObjects</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>UiPath.Core.Activities.Storage</x:String>
+      <x:String>UiPath.Core.Activities.Orchestrator</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Admin_Test" sap:VirtualizedContainerService.HintSize="512.2909090909092,6864" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Project1" sap:VirtualizedContainerService.HintSize="450.32727272727277,6776.727272727273" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" ScopeGuid="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="416.2909090909091,6536.727272727273" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Ai cont ?'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/" CVScreenId="ce397c2b-e434-41b0-bc59-8baa0ebc4a73" CvTextArea="857, 851, 204, 40" CvTextArgument="Ai cont ?" CvType="Text" DesignTimeRectangle="309, 845, 1303, 58" DesignTimeScaleFactor="1.1458333730697632" ElementType="Text" FullSelectorArgument="&lt;webctrl class='home-login-redirect' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl class='home-login-redirect' tag='H2' type='' aaname='Ai cont ?' check:innerText='Ai cont ?' /&gt;" Guid="bd1ec054-c5b3-4795-ba3a-f1c827ed7bfa" InformativeScreenshot="f94a2ced07056e782ffbc8b5f8633424.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="236, 57, 1449, 92" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='' aaname='GreenScape: Plantează și iubește' check:innerText='GreenScape: Plantează și iubește' /&gt;" Guid="debd84fe-76ad-45f5-b66c-72c6e0889808" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Conecteaza-te'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354.32727272727277,290.6181818181818" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Text="cristianbb" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/login" CVScreenId="eeccb271-3dfa-44c8-9b10-07f95a20598f" CvElementArea="563, 358, 812, 47" CvType="InputBox" DesignTimeRectangle="556, 415, 809, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='usernameId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='usernameId' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-invalid' placeholder='username (required)' aaname='' /&gt;" Guid="eca1e567-8094-4754-9907-d3fbf82d23cb" InformativeScreenshot="e45618a27c2d166bd6014294f2d7474d.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="278, 294, 1365, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='login-title' aaname='Conecteaza-te' check:innerText='Conecteaza-te' /&gt;" Guid="ed200d2c-2aaa-4885-bf48-64003a6b5c4c" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Conecteaza-te'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354.32727272727277,290.6181818181818" sap2010:WorkflowViewState.IdRef="NTypeInto_2" IsPassword="True" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Text="parola123" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/login" CVScreenId="44baf04f-cdfe-4d48-9368-ed9b23857794" CvTextArea="570, 480, 168, 20" CvTextArgument="password (required)" CvType="Text" DesignTimeRectangle="556, 468, 809, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="InputBoxPassword" FullSelectorArgument="&lt;webctrl id='passwordId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='passwordId' tag='INPUT' type='password' class='form-control ng-untouched ng-pristine ng-invalid' placeholder='password (required)' aaname='' /&gt;" Guid="6977077f-dac7-4e70-ba18-110de455150e" InformativeScreenshot="e2d51685b5a168226f887a1b9b059dc6.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="44baf04f-cdfe-4d48-9368-ed9b23857794" CvTextArea="830, 299, 261, 30" CvTextArgument="Conecteaza-te" CvType="Text" DesignTimeRectangle="278, 294, 1365, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='login-title' aaname='Conecteaza-te' check:innerText='Conecteaza-te' /&gt;" Guid="2461baed-fb48-40ef-afff-0d60f64bba51" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Conecteaza-te'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/login" CVScreenId="44baf04f-cdfe-4d48-9368-ed9b23857794" CvElementArea="882, 586, 158, 47" CvTextArea="896, 600, 129, 18" CvTextArgument="Conecteaza-te" CvType="Button" DesignTimeRectangle="883, 587, 156, 46" DesignTimeScaleFactor="1.1458333730697632" ElementType="Button" Guid="904915ef-de67-45cc-bdf4-5e1d14934bb0" InformativeScreenshot="f71370007aaa33182f9f80ba84fd15e5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="CV" TargetType="ComputerVisionBased" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="44baf04f-cdfe-4d48-9368-ed9b23857794" CvTextArea="830, 299, 261, 30" CvTextArgument="Conecteaza-te" CvType="Text" DesignTimeRectangle="831, 298, 260, 30" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='login-title' aaname='Conecteaza-te' check:innerText='Conecteaza-te' /&gt;" Guid="10d29792-f0f6-4d9a-b703-b142b1258890" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Admin'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/" CVScreenId="2fd438dc-60c3-416d-a62b-5f9c4b526596" CvTextArea="1313, 175, 77, 19" CvTextArgument="ADMIN" CvType="Text" DesignTimeRectangle="1305, 160, 94, 53" DesignTimeScaleFactor="1.1458333730697632" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='nav-link nav-link-grow-up' aaname='Admin' check:innerText='ADMIN' /&gt;" Guid="b6c4e5c2-11c4-4532-8c21-b58628f9bd0d" InformativeScreenshot="d9412e100e8cd743cc01048d6b8d91d7.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="2fd438dc-60c3-416d-a62b-5f9c4b526596" CvTextArea="236, 258, 1240, 81" CvTextArgument="GreenScape: Planteaza si iubeste" CvType="Text" DesignTimeRectangle="236, 250, 1449, 92" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='' aaname='GreenScape: Plantează și iubește' check:innerText='GreenScape: Plantează și iubește' /&gt;" Guid="36b3e7e5-06ba-4fe8-9b66-24e99d40b808" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Adauga planta'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin" CVScreenId="f66a8b68-0628-4791-96a9-9740e943ce63" CvElementArea="1543, 230, 156, 49" CvTextArea="1557, 244, 127, 22" CvTextArgument="Adauga planta" CvType="Button" DesignTimeRectangle="1545, 233, 153, 44" DesignTimeScaleFactor="1.1458333730697632" ElementType="Button" FullSelectorArgument="&lt;webctrl aaname=' Adauga planta ' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname=' Adauga planta ' tag='BUTTON' type='' class='btn btn-dark' check:innerText='Adauga planta' /&gt;" Guid="3e812c76-49f7-41c7-87f4-b54cd4bcf46e" InformativeScreenshot="6d3c02daf2f2fc4dd9f854a953c965bb.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="f66a8b68-0628-4791-96a9-9740e943ce63" CvTextArea="1416, 167, 69, 19" CvTextArgument="HOME" CvType="Text" DesignTimeRectangle="1408, 152, 86, 53" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Home' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Home' tag='A' type='' class='nav-link nav-link-grow-up' check:innerText='HOME' /&gt;" Guid="864b6e1e-8c9f-4eda-9f6c-eecd2ddc1ff4" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Nume'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354.32727272727277,290.6181818181818" sap2010:WorkflowViewState.IdRef="NTypeInto_3" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Text="Pepene Verde" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/add-plant" CVScreenId="65be29c0-6c44-4baa-a5b5-d2cbab8758f5" CvElementArea="419, 367, 429, 47" CvType="InputBox" DesignTimeRectangle="422, 370, 423, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='nameId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='nameId' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='Nume: ' /&gt;" Guid="795a9336-33df-4a5a-9e99-9b040a0c9bad" InformativeScreenshot="10a6e8e414daf7b2b5e7368a774aa2bc.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="65be29c0-6c44-4baa-a5b5-d2cbab8758f5" CvTextArea="310, 382, 58, 16" CvTextArgument="Nume:" CvType="Text" DesignTimeRectangle="296, 370, 113, 43" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='col-md-2 col-form-label' aaname='Nume: ' check:innerText='Nume:' /&gt;" Guid="8fced823-3b44-4a1f-ace9-5aed86cc6582" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Type'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_5" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/add-plant" CVScreenId="65be29c0-6c44-4baa-a5b5-d2cbab8758f5" CvElementArea="420, 419, 428, 48" CvType="InputBox" DesignTimeRectangle="422, 422, 423, 44" DesignTimeScaleFactor="1.1458333730697632" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='typeId' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='typeId' tag='SELECT' type='' class='form-control ng-untouched ng-pristine ng-valid' aaname='Type: ' /&gt;" Guid="76b626e2-36ab-4e18-8e9c-776b76a8639e" InformativeScreenshot="215487f14f1a5ce5029c1dac8ffdb07e.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="65be29c0-6c44-4baa-a5b5-d2cbab8758f5" CvTextArea="308, 434, 50, 20" CvTextArgument="Type:" CvType="Text" DesignTimeRectangle="296, 422, 113, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Type: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Type: ' tag='LABEL' type='' class='col-md-2 col-form-label' check:innerText='Type:' /&gt;" Guid="385e4d5c-8130-4a64-abd3-ec0af4f92061" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="354.32727272727277,250.4727272727273" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" Shortcuts="[d(hk)][k(Down)][u(hk)][d(hk)][k(Down)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NKeyboardShortcuts.VerifyOptions>
+            </uix:NKeyboardShortcuts>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Species'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354.32727272727277,290.6181818181818" sap2010:WorkflowViewState.IdRef="NTypeInto_4" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Text="Citrullus lanatus" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/add-plant" CVScreenId="8a559395-bd8f-4123-a519-6c8d936daa1e" CvElementArea="420, 472, 428, 47" CvType="InputBox" DesignTimeRectangle="422, 475, 423, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='speciesId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='speciesId' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='Species: ' /&gt;" Guid="2a7e4c94-cb97-47e9-b25f-65bd8f2ba8cf" InformativeScreenshot="9358e4b6e362900397308e92c566b8ce.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="8a559395-bd8f-4123-a519-6c8d936daa1e" CvTextArea="309, 486, 74, 20" CvTextArgument="Species:" CvType="Text" DesignTimeRectangle="296, 475, 113, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Species: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Species: ' tag='LABEL' type='' class='col-md-2 col-form-label' check:innerText='Species:' /&gt;" Guid="4f854da4-78d9-406e-91a0-cd9c800d7add" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354.32727272727277,290.6181818181818" sap2010:WorkflowViewState.IdRef="NTypeInto_5" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Text="Este cultivat în lumea întreagă pentru fructul său voluminos și comestibil, având o coajă dură și un miez necompartimentat." Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/add-plant" CVScreenId="1c81b0cc-c717-49c9-897a-076d53d3fb00" CvElementArea="419, 524, 429, 48" CvType="InputBox" DesignTimeRectangle="422, 528, 423, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='descriptionId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='descriptionId' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='Description: ' /&gt;" Guid="58a14635-074d-4ecd-b1d5-96ccceddd239" InformativeScreenshot="56c0ac7608ee31d4f66cc9b83c8d0968.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="296, 528, 113, 71" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Description: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Description: ' tag='LABEL' type='' class='col-md-2 col-form-label' check:innerText='Description:' /&gt;" Guid="83bfc174-ef98-4e0e-aadd-1f19a832a188" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Upload Image and Save'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_7" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/add-plant" CVScreenId="1c81b0cc-c717-49c9-897a-076d53d3fb00" CvElementArea="852, 628, 234, 47" CvTextArea="867, 642, 204, 20" CvTextArgument="Upload Image and Save" CvType="Button" DesignTimeRectangle="853, 631, 232, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="Button" FullSelectorArgument="&lt;webctrl id='savePlantDetails' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='savePlantDetails' tag='BUTTON' type='button' class='btn btn-primary' aaname='Upload Image and Save' check:innerText='Upload Image and Save' /&gt;" Guid="bfd2a890-de84-4744-8667-c95a7763e709" InformativeScreenshot="ea24f4700b08bb5b0fc4538e953e939f.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="1c81b0cc-c717-49c9-897a-076d53d3fb00" CvTextArea="834, 297, 269, 38" CvTextArgument="Adauga planta" CvType="Text" DesignTimeRectangle="287, 294, 1364, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='title' aaname='Adauga planta' check:innerText='Adauga planta' /&gt;" Guid="0d7cbb5b-372c-4392-bb9d-01987e8b9056" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Open'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_11" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="464c6d06-9705-48ae-88e4-ff78b2c1a9bd" CvTextArea="68, 250, 69, 12" CvTextArgument="Downloads" CvType="Text" DesignTimeRectangle="68, 240, 72, 36" DesignTimeScaleFactor="1.1458333730697632" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Control Host' cls='NamespaceTreeControl' title='Namespace Tree Control' /&gt;&lt;wnd ctrlid='100' title='Navigation Pane' /&gt;&lt;ctrl name='Downloads (pinned)' role='outline item' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd aaname='Control Host' cls='NamespaceTreeControl' title='Namespace Tree Control' /&gt;&lt;wnd ctrlid='100' title='Navigation Pane' /&gt;&lt;ctrl name='Downloads (pinned)' role='outline item' automationid='' check:text='Downloads (pinned)' /&gt;" Guid="2c0e3a5a-8159-4ac4-b5a6-cc7bc26568e0" InformativeScreenshot="571b2f1df7baccbafd8cb28b988461ff.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="464c6d06-9705-48ae-88e4-ff78b2c1a9bd" CvTextArea="40, 10, 36, 17" CvTextArgument="Open" CvType="Text" DesignTimeRectangle="40, 10, 36, 17" ElementType="Text" Guid="aba63ca5-c9fb-4ade-9ed0-e81c530aae44" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'pepene.jpg'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_12" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable CVScreenId="ebed2bd4-0d6e-4a69-bef5-ac842cd14aad" CvElementArea="337, 175, 94, 90" CvTextArea="351, 280, 68, 17" CvType="Icon" DesignTimeRectangle="328, 167, 119, 133" DesignTimeScaleFactor="1.1458333730697632" ElementType="ListItem" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='1' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='1' role='list item' check:text='pepene.jpg' /&gt;" Guid="21dca12e-6368-4716-82ea-f6162196c6e9" ImageBase64="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" InformativeScreenshot="d34d7debbca7ffeb2e38678d67031833.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="ebed2bd4-0d6e-4a69-bef5-ac842cd14aad" CvTextArea="351, 280, 68, 17" CvTextArgument="pepene.jpg" CvType="Text" DesignTimeRectangle="352, 278, 71, 20" ElementType="Text" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='1' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='1' /&gt;&lt;ctrl automationid='System.ItemNameDisplay' role='editable text' check:text='pepene.jpg' /&gt;" Guid="31f0ca24-81ec-4422-b68c-9204aa4a474c" SearchSteps="Selector, FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Admin'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_14" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/add-plant" CVScreenId="c562af99-eea9-49dc-9cba-45d1cf2856f3" CvTextArea="1321, 113, 76, 19" CvTextArgument="ADMIN" CvType="Text" DesignTimeRectangle="1314, 98, 94, 53" DesignTimeScaleFactor="1.1458333730697632" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='nav-link nav-link-grow-up' aaname='Admin' check:innerText='ADMIN' /&gt;" Guid="3f573e30-c8e6-40c1-9275-55615fb35705" InformativeScreenshot="ad34809970aec59f75a73d6c6907a1d4.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="c562af99-eea9-49dc-9cba-45d1cf2856f3" CvTextArea="834, 244, 270, 40" CvTextArgument="Adauga planta" CvType="Text" DesignTimeRectangle="287, 240, 1364, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='title' aaname='Adauga planta' check:innerText='Adauga planta' /&gt;" Guid="aa5cc8dd-01a2-4a07-93f7-8ce869d8367f" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Edit'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_15" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin" CVScreenId="2f94b57c-081c-47c6-ae16-174843c2ec8d" CvElementArea="1542, 815, 65, 48" CvTextArea="1557, 829, 35, 17" CvTextArgument="Edit" CvType="Button" DesignTimeRectangle="1542, 815, 66, 48" DesignTimeScaleFactor="1.1458333730697632" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='edit' idx='5' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='edit' type='button' tag='BUTTON' class='btn btn-light' aaname=' Edit ' check:innerText='Edit' /&gt;" Guid="80a6985a-812b-4797-9eff-922e8f733469" InformativeScreenshot="831d85cb424a2ba1ec066c89de725730.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="2f94b57c-081c-47c6-ae16-174843c2ec8d" CvTextArea="249, 821, 60, 20" CvTextArgument="Pepene" CvType="Text" DesignTimeRectangle="249, 821, 61, 20" ElementType="Text" Guid="c070fea2-8181-473d-a0c3-4c5053571ca5" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Nume'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354.32727272727277,290.6181818181818" sap2010:WorkflowViewState.IdRef="NTypeInto_6" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Text="Pepene Galben" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin/4018" CVScreenId="0ae85ebb-029f-47e8-abaf-4f820dcc854b" CvElementArea="420, 313, 427, 46" CvType="InputBox" DesignTimeRectangle="422, 370, 423, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='nameId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='nameId' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='Nume: ' /&gt;" Guid="d7908197-1bd5-4767-a426-15a7918653d9" InformativeScreenshot="a0042c0c106baa44fea2798c6c854e20.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="0ae85ebb-029f-47e8-abaf-4f820dcc854b" CvTextArea="309, 380, 49, 20" CvTextArgument="Type:" CvType="Text" DesignTimeRectangle="296, 370, 113, 43" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='LABEL' type='' class='col-md-2 col-form-label' aaname='Nume: ' check:innerText='Nume:' /&gt;" Guid="05a1d0dd-c8ef-4b33-b51e-db9e636db904" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Type'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_17" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin/4018" CVScreenId="117bc686-a317-41b4-8d23-20c86bfe658d" CvElementArea="419, 419, 428, 47" CvType="InputBox" DesignTimeRectangle="422, 422, 423, 44" DesignTimeScaleFactor="1.1458333730697632" ElementType="DropDown" FullSelectorArgument="&lt;webctrl id='typeId' tag='SELECT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='typeId' tag='SELECT' type='' class='form-control ng-untouched ng-pristine ng-valid' aaname='Type: ' /&gt;" Guid="02faa163-c9af-45c5-b3f2-384ffea32a6a" InformativeScreenshot="ef5d9d00cb323c58d2f151328cd85a30.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="117bc686-a317-41b4-8d23-20c86bfe658d" CvTextArea="309, 434, 49, 20" CvTextArgument="Type:" CvType="Text" DesignTimeRectangle="296, 422, 113, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Type: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Type: ' tag='LABEL' type='' class='col-md-2 col-form-label' check:innerText='Type:' /&gt;" Guid="ee4cc5c6-62d7-4860-9784-185157f0cf04" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts" sap:VirtualizedContainerService.HintSize="354.32727272727277,250.4727272727273" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_2" Shortcuts="[d(hk)][k(Up)][u(hk)][d(hk)][k(enter)][u(hk)]" Version="V3">
+              <uix:NKeyboardShortcuts.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NKeyboardShortcuts.VerifyOptions>
+            </uix:NKeyboardShortcuts>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Species'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354.32727272727277,290.6181818181818" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Text="Cucumis melo" Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin/4018" CVScreenId="e576c2b0-6bc8-4038-af4d-e1ae17e596f5" CvElementArea="420, 472, 428, 47" CvType="InputBox" DesignTimeRectangle="422, 475, 423, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='speciesId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='speciesId' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='Species: ' /&gt;" Guid="b50cbe05-7b08-45af-bacc-fed669a9fd87" InformativeScreenshot="acf0cf7aafeebf8ab3b7fb75ed9e0523.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="e576c2b0-6bc8-4038-af4d-e1ae17e596f5" CvTextArea="309, 486, 74, 20" CvTextArgument="Species:" CvType="Text" DesignTimeRectangle="296, 475, 113, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Species: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Species: ' tag='LABEL' type='' class='col-md-2 col-form-label' check:innerText='Species:' /&gt;" Guid="5dbdc56e-c467-4593-85b7-2b34dfd05df7" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Description'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="354.32727272727277,290.6181818181818" sap2010:WorkflowViewState.IdRef="NTypeInto_9" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Text="Se cultivă pentru fructul său, care se coace vara, conține multă apă și este de gust dulce." Version="V3">
+              <uix:NTypeInto.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin/4018" CVScreenId="e576c2b0-6bc8-4038-af4d-e1ae17e596f5" CvElementArea="420, 525, 426, 46" CvType="InputBox" DesignTimeRectangle="422, 528, 423, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="InputBox" FullSelectorArgument="&lt;webctrl id='descriptionId' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl id='descriptionId' tag='INPUT' type='text' class='form-control ng-untouched ng-pristine ng-valid' aaname='Description: ' /&gt;" Guid="f47e82bc-6371-4796-90c1-67aa7dda4cb1" InformativeScreenshot="9f6262d62fb5565f6807e2b19a980a2c.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target DesignTimeRectangle="296, 528, 113, 71" ElementType="Text" FullSelectorArgument="&lt;webctrl aaname='Description: ' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Description: ' tag='LABEL' type='' class='col-md-2 col-form-label' check:innerText='Description:' /&gt;" Guid="f7283001-f7a2-4e5b-bb9e-c155bdedf5bb" SearchSteps="FuzzySelector" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NTypeInto.Target>
+              <uix:NTypeInto.VerifyOptions>
+                <uix:VerifyExecutionTypeIntoOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionTypeIntoOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionTypeIntoOptions.Retry>
+                  <uix:VerifyExecutionTypeIntoOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionTypeIntoOptions.Timeout>
+                </uix:VerifyExecutionTypeIntoOptions>
+              </uix:NTypeInto.VerifyOptions>
+            </uix:NTypeInto>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'I edit-icon'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin/4018" CVScreenId="e576c2b0-6bc8-4038-af4d-e1ae17e596f5" CvElementArea="1594, 715, 25, 26" CvType="Icon" DesignTimeRectangle="1598, 722, 19, 19" DesignTimeScaleFactor="1.1458333730697632" FullSelectorArgument="&lt;webctrl id='edit-icon' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl id='edit-icon' tag='I' type='' class='fa-solid fa-pen-to-square' aaname='' /&gt;" Guid="b7ab867a-01ec-4c41-b667-92bff0e9a3a5" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABcAAAAXCAYAAADgKtSgAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEOoAABDqAYLTCpgAAAF8SURBVEhL1ZTBS8JQHMf7tzt06OLBi6BgTLRaSOxghIg7CE4IpECI4UYZSCDKSMEaogwa49u29wbvba9tlh36wO/y3nef3+O3tx3hDzmI3F3p0HoKtKclXLoW8Gu5u2ijIR2jdEaq0Z9gS/eEcndlQh/fx2qCtUcDEZ4Le3yJMhWTKqA3J9sJuTUsMUG+WiYN+YQnPq9gaAFbk21wgs6UZHj5vA0pCtULqF4wda3geUdi3CjqfINyZyQeyzI6dbMLPy8kPmO2wXoxhc2MjpNbd0US9ruLEIpplVWTuykBueWpYj/Pnjgin9zq7i0OyCGfoScnpUGliQOy5bMbVGPSuNh6VHA7GCW+g0z5a/80VQyM0ArXi9De6BIlQ26iU2PEtQLkgR4bxY/lG+hqCbLahbFwEleNsK+8zb7QLHLK7YcKkdeaMD7pYgbh/c8jx4cG+Zv7nFmCXwYv99m+KJD2bXClwNhQAUNCHuI5sO33fLVx6ENJxPID8V/lwBfgYGfZTtCgsgAAAABJRU5ErkJggg==" InformativeScreenshot="06162a5f2cfa5047608d3a3f38ef22f5.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="e576c2b0-6bc8-4038-af4d-e1ae17e596f5" CvElementArea="596, 604, 75, 48" CvTextArea="611, 619, 43, 17" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="598, 608, 71, 43" ElementType="Button" FullSelectorArgument="&lt;webctrl id='savePlantDetails' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='savePlantDetails' tag='BUTTON' type='button' class='btn btn-primary' aaname='Save' check:innerText='Save' /&gt;" Guid="615d6847-9ddd-49c4-b42e-16f3ce2e2577" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Double" DisplayName="Click 'pepene_galben.j'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_20" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable DesignTimeRectangle="208, 167, 119, 152" DesignTimeScaleFactor="1.1458333730697632" ElementType="ListItem" FullSelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='0' /&gt;" FuzzySelectorArgument="&lt;wnd aaname='Explorer Pane' cls='DirectUIHWND' /&gt;&lt;wnd ctrlid='1121' title='ShellView' /&gt;&lt;wnd aaname='Items View' cls='DirectUIHWND' /&gt;&lt;ctrl name='Items View' role='list' /&gt;&lt;ctrl automationid='0' /&gt;&lt;ctrl automationid='0' role='list item' check:text='pepene_galben.jpg' /&gt;" Guid="0a236100-7325-4776-8061-0030f1d6f855" InformativeScreenshot="9dc8d3d9d28bcf8b89fbd51d3b4fc960.png" ScopeSelectorArgument="&lt;wnd app='msedge.exe' cls='#32770' title='Open' /&gt;" SearchSteps="Selector, FuzzySelector" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="645d8fac-a8e0-49b9-b6bb-da23ca02391a" CvTextArea="216, 280, 100, 17" CvTextArgument="pepene_galben.j" CvType="Text" DesignTimeRectangle="216, 279, 100, 17" ElementType="Text" Guid="fb4f0fe9-4435-44cf-aaa4-429b20f4a31a" SearchSteps="CV" TargetType="ComputerVisionBased" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Save'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin/4018" CVScreenId="dc13836f-ff44-403d-9e68-b9a52ebf3119" CvElementArea="596, 604, 75, 48" CvTextArea="611, 619, 43, 17" CvTextArgument="Save" CvType="Button" DesignTimeRectangle="598, 608, 71, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="Button" FullSelectorArgument="&lt;webctrl id='savePlantDetails' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl id='savePlantDetails' tag='BUTTON' type='button' class='btn btn-primary' aaname='Save' check:innerText='Save' /&gt;" Guid="531b78f9-3ad2-4571-81ef-b41971e6095c" InformativeScreenshot="d849b3b203ec51d108a07744964e1dcd.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="dc13836f-ff44-403d-9e68-b9a52ebf3119" CvTextArea="823, 296, 291, 41" CvTextArgument="Editeaza planta" CvType="Text" DesignTimeRectangle="287, 294, 1364, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='title' aaname='Editeaza planta' check:innerText='Editeaza planta' /&gt;" Guid="d94bc2f4-7e53-494e-b74d-cee76ec43bd5" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Admin'" sap:VirtualizedContainerService.HintSize="354.32727272727277,226.90909090909093" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin/4018" CVScreenId="d3ff5cfa-72ef-4250-9985-2da5eab8a0e7" CvTextArea="1321, 167, 77, 20" CvTextArgument="ADMIN" CvType="Text" DesignTimeRectangle="1314, 152, 94, 53" DesignTimeScaleFactor="1.1458333730697632" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='nav-link nav-link-grow-up' aaname='Admin' check:innerText='ADMIN' /&gt;" Guid="06958d84-3fea-4d58-ba3b-923448d70db1" InformativeScreenshot="64c74456592871978e1b09f78c9fea6b.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="d3ff5cfa-72ef-4250-9985-2da5eab8a0e7" CvTextArea="823, 296, 291, 41" CvTextArgument="Editeaza planta" CvType="Text" DesignTimeRectangle="287, 294, 1364, 44" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H2' type='' class='title' aaname='Editeaza planta' check:innerText='Editeaza planta' /&gt;" Guid="1d2b9276-6994-40c8-a782-ef58401ff879" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Delete'" sap:VirtualizedContainerService.HintSize="354.32727272727277,219.92727272727274" sap2010:WorkflowViewState.IdRef="NClick_23" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="21d3108c-47a6-45a8-8fe2-a1652ad1ea7f" Version="V3">
+              <uix:NClick.Target>
+                <uix:TargetAnchorable BrowserURL="https://localhost:44488/#/admin" CVScreenId="d074a209-ed6f-44bc-a69a-474600a6d87f" CvElementArea="1601, 870, 88, 46" CvTextArea="1616, 883, 58, 17" CvTextArgument="Delete" CvType="Button" DesignTimeRectangle="1603, 873, 85, 43" DesignTimeScaleFactor="1.1458333730697632" ElementType="Button" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='delete' idx='5' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl id='delete' type='button' tag='BUTTON' class='btn btn-danger' aaname='Delete' check:innerText='Delete' /&gt;" Guid="9f07c231-41dd-4d10-be73-5a1469b049d8" InformativeScreenshot="3820b7458aeef3da494976c90423f198.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='Project1' /&gt;" SearchSteps="FuzzySelector, CV" Version="V3" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CVScreenId="d074a209-ed6f-44bc-a69a-474600a6d87f" CvTextArea="249, 874, 122, 21" CvTextArgument="Pepene Galben" CvType="Text" DesignTimeRectangle="240, 860, 148, 134" ElementType="Text" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='5' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' aaname='Pepene Galben' check:innerText='Pepene Galben' /&gt;" Guid="f7d0f4ae-d0f4-408b-a133-85bbc3fe89b7" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NClick.Target>
+              <uix:NClick.VerifyOptions>
+                <uix:VerifyExecutionOptions DisplayName="{x:Null}" Mode="Appears">
+                  <uix:VerifyExecutionOptions.Retry>
+                    <InArgument x:TypeArguments="x:Boolean" />
+                  </uix:VerifyExecutionOptions.Retry>
+                  <uix:VerifyExecutionOptions.Timeout>
+                    <InArgument x:TypeArguments="x:Double" />
+                  </uix:VerifyExecutionOptions.Timeout>
+                </uix:VerifyExecutionOptions>
+              </uix:NClick.VerifyOptions>
+            </uix:NClick>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-9, -9, 1938, 1044" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAEOoAABDqAYLTCpgAAAK7SURBVDhPdZLda9NQGMbjnyayO+8E8cIbwRsvnOxiMNiF4pggiDKYlyIqgnPuA8uq+17dh9uStV3XNu3aLv1ImzUfbdMmaZImfTw5ZXOCCzxwOOc8v/PkfV8GwI0LJRKJm5Zl4X8yDAOyLIPn+fdXPYymaZeXgvV1n+d5cBwHmUwG5XL5EsJ0Oh3MxRRMbVXxYUeglx3HhSRr/0iUZKpoLIZkMgmSlkIoYGqzitGFM0yt5q8F1OoqBQjlKprNFkRRBMdxtyjgzaaIkfkCnocyFBDE7RgmTMuG2bXJ2qJqkz29Y8KyXXq2trY2RAGvN0Q8mcvj2XeeAoIEwYtKQ4dKVDtXUT1X/YqkolRVoBu2b9mev7yyMgC82qhgZCGPyaVBAvsCoLWoRGIMzOVaAFADAEzbQ/hHeAB4uV7Go9lTjC+m0O/30bUd+mpgltXWFbOCoqig2bZhWD2EQqEhpt1u48VqCQ9nMhhbSML3CaDroEpMiWQafCaLNJ/BVuQXuKMoItu/SSElVGoKpt9O32F0AphYKeLBFx6j8yfwfB8WAQSvpvgscrk8JElCs6WT6g/UIF1QFA0sywmMrrfx9OcZ7n9OYeTbMVzPJ/FsGjmVPkWlIpLBEVEqiSiWKhCKf7V/wApMU9cxHs7j3qcTDH+Nw3F9dEyb/q9ATEFBu7RtDgzTIa20qfSODT5bEJgGiTa2lMfdjwk8nokTg0cSuKSFBsRaHT2vT4w2LWhdaZLiavSsbfaQzRUJgPR5NJTD7XdxDM/GyZB4tEVG18O5rMLt+XR4ArNUbxCoSiaT1KLtIp0VBCYYlLRk4LCkI14KLsioVOsoi3UUydgGgC5N1SP9d6lR0x2qJE8Ax4nkBHcUm2S5gQ4DsdHJA6K19c1llosWDg6PCnv7XGFnjy1s73K5yC6bi+ywufnFcOQP0NGNf8YUGpIAAAAASUVORK5CYII=" InformativeScreenshot="a27214b2f74b05361fd1e7007fbf9ef5.jpg" Selector="&lt;html app='msedge.exe' title='Project1' /&gt;" Title="New tab" Url="https://localhost:44488/#/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
