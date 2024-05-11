@@ -11,4 +11,9 @@ Echipa noastră:
 - Draghioti Andreea
 - Borcan Cristian
 
-[Link pentru prezentare](https://docs.google.com/presentation/d/1K21oRCAtrjXaDZAdQ__jpQ7afUIlCCl4CynDpbhSFfc/edit?usp=sharing) în care am inclus explicații, demo-uri, comparații și diverse diagrame.
+### Useful links:
+[Link catre Youtube - Demo RobotFramework](https://www.youtube.com/watch?v=bGSA3kx8zsE)
+
+[Link Youtube Demo - UiPath](https://www.youtube.com/watch?v=eizZcer-R3M)
+
+[Link catre prezentarea Powerpoint](https://docs.google.com/presentation/d/1K21oRCAtrjXaDZAdQ__jpQ7afUIlCCl4CynDpbhSFfc/edit?usp=sharing) în care am inclus explicații, demo-uri, comparații și diverse diagrame.
