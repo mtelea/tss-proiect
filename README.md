@@ -79,5 +79,5 @@ Successful Login Test
 Am rulat robotul folosind codul primit, modificând datele de intrare cu unele corecte pentru aplicația noastră, dar la rularea acestuia am constatat faptul că în codul primit există keyword-uri deprecated sau chiar inexistente pentru versiunea actuală din Robot Framework, probabil datorită limitărilor modelului AI, ce folosește date mai vechi de 2021. În consecință, robotul nu este funcțional, iar efortul necesar modificării acestuia pentru a-l aduce într-o stare funcțională pare să fie mai mare decât cel pentru a îl crea manual. Am atașat mai jos un screenshot cu codul în care observăm keyword-urile folosite în mod eronat și erorile primite la rulare.
 
 <p align="center">
-<img src="/raport_ai.png" width="500"/>
+<img src="/raport_ai.png"/>
 </p>
