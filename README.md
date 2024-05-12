@@ -21,8 +21,8 @@ Echipa noastră:
 
 ### Raport AI:
 
-Am folosit ChatGPT 3.5 pentru a încerca să generăm codul pentru un robot care să testeze funcționalitatea endpoint-ului de Login (happy flow) pe partea de back-end.
-Introducând următorul prompt:
+Am folosit ChatGPT 3.5 pentru a încerca să generăm codul unui robot care să testeze funcționalitatea endpoint-ului de Login (happy flow) pe partea de back-end.
+Am introdus următorul prompt:
 "Write a succesfull login test case using robotframework for the method below: "
 ```cs
 public LoginController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
